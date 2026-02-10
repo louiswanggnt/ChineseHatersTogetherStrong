@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Warrior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Press+Start+2P&display=swap');
+      
+      :root {
+        --pixel-font: 'Press Start 2P', cursive;
+        --content-font: 'Noto Sans TC', sans-serif;
+      }
+
+      body {
+        font-family: var(--content-font);
+        background-color: #1a1a1a;
+        color: white;
+        overflow: hidden;
+        image-rendering: pixelated; /* Ensure crisp scaling */
+      }
+
+      /* Pixel Art Animations */
+      @keyframes shake {
+        0% { transform: translate(4px, 0px); }
+        25% { transform: translate(-4px, 0px); }
+        50% { transform: translate(4px, 0px); }
+        75% { transform: translate(-4px, 0px); }
+        100% { transform: translate(0px, 0px); }
+      }
+
+      .shake-animation {
+        animation: shake 0.3s steps(4) infinite; /* steps for jerky retro feel */
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .float-animation {
+        animation: float 2s steps(8) infinite;
+      }
+
+      @keyframes slash {
+        0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+        50% { transform: scale(1.5) rotate(0deg); opacity: 1; }
+        100% { transform: scale(1) rotate(45deg); opacity: 0; }
+      }
+      
+      .slash-effect {
+        animation: slash 0.3s ease-out forwards;
+      }
+
+      /* Fire Effect */
+      @keyframes burn {
+        0% { text-shadow: 0 0 4px #ff0000, 0 -5px 4px #ffaa00, 2px -10px 6px #ffcc00, -2px -15px 11px #ff8800; }
+        50% { text-shadow: 0 0 4px #ff0000, -2px -6px 5px #ffaa00, 3px -12px 8px #ffcc00, -4px -18px 12px #ff8800; }
+        100% { text-shadow: 0 0 4px #ff0000, 1px -4px 4px #ffaa00, -3px -11px 7px #ffcc00, 3px -16px 10px #ff8800; }
+      }
+
+      .fire-anim {
+        color: #fff;
+        animation: burn 0.4s infinite alternate;
+      }
+
+      .crit-scale {
+        animation: crit-pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      @keyframes crit-pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1.2); opacity: 1; }
+      }
+
+      /* Pixel Borders Utility */
+      .pixel-border {
+        box-shadow: 
+          -4px 0 0 0 black,
+          4px 0 0 0 black,
+          0 -4px 0 0 black,
+          0 4px 0 0 black;
+        margin: 4px;
+      }
+      
+      .pixel-text {
+        font-family: var(--pixel-font);
+      }
+
+      /* Scrollbar hiding for game board */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
