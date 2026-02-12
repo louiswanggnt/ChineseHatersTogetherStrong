@@ -1,5 +1,8 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { EnemyIntent } from '../types';
+import { INTENT_COLORS, INTENT_ICONS } from '../constants';
+import { getEnemySpritePath } from '../constants/spritePaths';
 
 interface EnemyProps {
   isHit: boolean;
@@ -7,13 +10,44 @@ interface EnemyProps {
   hp: number;
   maxHp: number;
   damageText: number | null;
+  intent?: EnemyIntent;
+  intentValue?: number;
+  enemyType?: string;
 }
 
-export const Enemy: React.FC<EnemyProps> = ({ isHit, isAttacking, hp, maxHp, damageText }) => {
+const FALLBACK_PIXEL_SLIME = (
+  <div className="w-full h-full relative">
+    <div className="absolute bottom-0 left-2 right-2 h-8 bg-green-500 border-x-4 border-b-4 border-black"></div>
+    <div className="absolute bottom-8 left-4 right-4 h-12 bg-green-500 border-x-4 border-black"></div>
+    <div className="absolute bottom-20 left-8 right-8 h-4 bg-green-500 border-x-4 border-t-4 border-black"></div>
+    <div className="absolute bottom-16 left-6 w-4 h-4 bg-white opacity-60"></div>
+    <div className="absolute bottom-12 left-8 w-4 h-4 bg-black"></div>
+    <div className="absolute bottom-12 right-8 w-4 h-4 bg-black"></div>
+    <div className="absolute bottom-6 left-12 right-12 h-2 bg-black opacity-60"></div>
+    <div className="absolute -bottom-2 left-4 w-4 h-4 bg-green-600 border-2 border-black"></div>
+    <div className="absolute -bottom-2 right-6 w-4 h-4 bg-green-600 border-2 border-black"></div>
+  </div>
+);
+
+export const Enemy: React.FC<EnemyProps> = ({ isHit, isAttacking, hp, maxHp, damageText, intent, intentValue, enemyType = 'slime' }) => {
+  const [imgError, setImgError] = useState(false);
   const hpPercent = Math.max(0, Math.min(100, (hp / maxHp) * 100));
+  const spriteSrc = getEnemySpritePath(enemyType, isAttacking ? 'attack' : 'idle');
 
   return (
     <div className={`relative w-32 h-32 transition-transform duration-100 ${isAttacking ? '-translate-x-4' : ''}`}>
+      {/* Intent Display */}
+      {intent && intent !== EnemyIntent.UNKNOWN && (
+        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-black/80 border-2 border-white px-2 py-1 z-40">
+          <div className={`text-lg ${INTENT_COLORS[intent]}`}>
+            {INTENT_ICONS[intent]}
+          </div>
+          {intentValue !== undefined && (
+            <div className="text-[8px] text-white text-center">{intentValue}</div>
+          )}
+        </div>
+      )}
+      
       {/* Retro HP Bar */}
       <div className="absolute -top-10 left-0 w-full h-5 bg-gray-900 border-2 border-black p-0.5 z-30">
         <div 
@@ -39,34 +73,18 @@ export const Enemy: React.FC<EnemyProps> = ({ isHit, isAttacking, hp, maxHp, dam
          </div>
       )}
 
-      {/* Pixel Slime Sprite */}
+      {/* Sprite or Fallback */}
       <div className={`w-full h-full relative ${isHit ? 'shake-animation grayscale brightness-150' : 'float-animation'}`}>
-        
-        {/* Main Body Blocks (Stepped Pyramid) */}
-        
-        {/* Bottom Layer */}
-        <div className="absolute bottom-0 left-2 right-2 h-8 bg-green-500 border-x-4 border-b-4 border-black"></div>
-        
-        {/* Middle Layer */}
-        <div className="absolute bottom-8 left-4 right-4 h-12 bg-green-500 border-x-4 border-black"></div>
-        
-        {/* Top Layer */}
-        <div className="absolute bottom-20 left-8 right-8 h-4 bg-green-500 border-x-4 border-t-4 border-black"></div>
-
-        {/* Highlights (Shine) */}
-        <div className="absolute bottom-16 left-6 w-4 h-4 bg-white opacity-60"></div>
-
-        {/* Eyes */}
-        <div className="absolute bottom-12 left-8 w-4 h-4 bg-black"></div>
-        <div className="absolute bottom-12 right-8 w-4 h-4 bg-black"></div>
-
-        {/* Mouth (Pixel) */}
-        <div className="absolute bottom-6 left-12 right-12 h-2 bg-black opacity-60"></div>
-        
-        {/* Slime Drippings (Decoration) */}
-        <div className="absolute -bottom-2 left-4 w-4 h-4 bg-green-600 border-2 border-black"></div>
-        <div className="absolute -bottom-2 right-6 w-4 h-4 bg-green-600 border-2 border-black"></div>
-
+        {!imgError ? (
+          <img
+            src={spriteSrc}
+            alt="enemy"
+            className="w-full h-full object-contain"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          FALLBACK_PIXEL_SLIME
+        )}
       </div>
     </div>
   );
