@@ -1,5 +1,5 @@
 
-import { SentenceRow, Card, CardType, CardRarity } from "../types";
+import { SentenceRow } from "../types";
 import { RARITY_PARAMS } from "../constants";
 import { weightedRandomSelect } from "./statsService";
 
@@ -9,7 +9,7 @@ const generateId = () => Math.random().toString(36).substr(2, 9);
 interface RawSentenceData {
   id: string; // 題目唯一 ID
   text: string;
-  difficulty: CardRarity; // 難度對應稀有度
+  difficulty: 'R' | 'SR' | 'UR'; // 難度稀有度
   subjectIndices: number[];
   verbIndices: number[];
   objectIndices: number[];
@@ -178,27 +178,22 @@ export const fetchSentences = async (count: number = 3, difficulty: string = 'ea
 };
 
 /**
- * 新版：依手牌取題（每張卡對應一題）
+ * 新版：依難度取題
  */
-export const fetchQuestionsByCards = async (cards: Card[]): Promise<SentenceRow[]> => {
+export const fetchQuestionsByDifficulty = async (difficulty: 'R' | 'SR' | 'UR' = 'R', count: number = 1): Promise<SentenceRow[]> => {
   // Simulate network delay
   await new Promise(resolve => setTimeout(resolve, 500));
 
-  return cards.map(card => {
-    // 依卡牌稀有度篩選題目
-    const matchingQuestions = STATIC_SENTENCES.filter(q => q.difficulty === card.rarity);
-    
-    // 若該難度沒題目，則從全部題庫隨機選
-    const pool = matchingQuestions.length > 0 ? matchingQuestions : STATIC_SENTENCES;
-    
-    // 使用加權隨機選取（自適應出題）
+  const matchingQuestions = STATIC_SENTENCES.filter(q => q.difficulty === difficulty);
+  const pool = matchingQuestions.length > 0 ? matchingQuestions : STATIC_SENTENCES;
+  
+  const results: SentenceRow[] = [];
+  for (let i = 0; i < count; i++) {
     const question = weightedRandomSelect(pool);
-    
-    // 取得該稀有度的參數
-    const params = RARITY_PARAMS[card.rarity];
+    const params = RARITY_PARAMS[difficulty];
 
-    return {
-      id: question.id, // 使用題目的真實 ID
+    results.push({
+      id: question.id,
       text: question.text,
       isClearing: false,
       characters: question.text.split('').map((char, index) => ({
@@ -211,10 +206,11 @@ export const fetchQuestionsByCards = async (cards: Card[]): Promise<SentenceRow[
         objectIndices: question.objectIndices,
         helperIndices: question.helperIndices,
       },
-      questionType: card.type,
-      difficulty: card.rarity,
+      difficulty: question.difficulty,
       timeLimit: params.timeLimit,
       perfectThreshold: params.perfectThreshold,
-    };
-  });
+    });
+  }
+
+  return results;
 };

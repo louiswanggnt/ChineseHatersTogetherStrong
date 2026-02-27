@@ -1,0 +1,48 @@
+[
+
+  {
+    "id": "c003",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "SR",
+    "sentence1": "__ 你準時完成報告,老師會給你加分",
+    "standardAnswer": "如果"
+  },
+
+  {
+    "id": "c004",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "R",
+    "sentence1": "今天下雨，__我帶了雨傘",
+    "standardAnswer": "所以"
+  },
+  {
+    "id": "c005",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "R",
+    "sentence1": "__ 他很用功,成績還是不理想",
+    "standardAnswer": "即使"
+  },
+  {
+    "id": "c006",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "R",
+    "sentence1": "__ 你滿分,就可以獲得獎勵",
+    "standardAnswer": "如果"
+  },
+  {
+    "id": "c007",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "R",
+    "sentence1": "__ 到了2026,世界還是一團亂",
+    "standardAnswer": "即使"
+  },
+  {
+    "id": "c008",
+    "type": "FILL_CONJUNCTION",
+    "difficulty": "R",
+    "sentence1": "如果你現在放了我的話，__我可以考慮饒你一條命",
+    "standardAnswer": "或許"
+  }
+
+
+  ]

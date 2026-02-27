@@ -1,0 +1,43 @@
+[
+  {
+    "id": "m001",
+    "type": "CIRCLE_MODERN",
+    "difficulty": "R",
+    "text": "氮氧化物在接觸到水分子後會生成硝酸鹽，對土壤的酸化、臭氧的破壞、以及水質的優養化有極大的破壞。",
+    "answer": {
+      "subjectIndices": ["氮氧化物NOx","硝酸鹽"],
+      "keyIndices": "土壤的酸化、臭氧的破壞、以及水質的優養化有極大的破壞"
+    }
+  },
+  {
+    "id": "m002",
+    "type": "CIRCLE_MODERN",
+    "difficulty": "R",
+    "text": "研究推測失智症與塑膠微粒之間可能存在關聯，但尚無法證明因果。",
+    "answer": {
+      "subjectIndices": ["失智症","塑膠微粒"],
+      "keyIndices": ["可能存在關聯","但尚無法證明因果"]
+    }
+  },
+  {
+    "id": "m003",
+    "type": "CIRCLE_MODERN",
+    "difficulty": "R",
+    "text": "電子顯微鏡能清楚呈現微塑膠表面的粗糙度、裂紋與附著物。",
+    "answer": {
+      "subjectIndices": "電子顯微鏡",
+      "keyIndices": "微塑膠表面的粗糙度、裂紋與附著物"
+    }
+  },
+  {
+    "id": "m004",
+    "type": "CIRCLE_MODERN",
+    "difficulty": "R",
+    "text": "顯微鏡是目前辨識塑膠微粒最重要的工具之一。由於塑膠顆粒的尺寸從幾毫米到幾奈米不等，外觀、顏色、透明度差異極大，肉眼觀察幾乎無法分辨",
+    "answer": {
+      "subjectIndices": ["顯微鏡","塑膠微粒"],
+      "keyIndices": ["差異極大","肉眼觀察幾乎無法分辨"]
+    }
+  }
+]
+

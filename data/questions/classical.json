@@ -1,0 +1,255 @@
+[
+  {
+    "id": "q001",
+    "type": "CIRCLE_CLASSICAL",
+    "difficulty": "R",
+    "text": "不亦說乎",
+    "answer": {
+      "subjectIndices": [],
+      "verbIndices": "說(愉悅)",
+      "particleIndices": ["亦(也)"]
+    }
+  },
+  {
+    "id": "q002",
+    "type": "CIRCLE_CLASSICAL",
+    "difficulty": "R",
+    "text": "言必信行必果",
+    "answer": {
+      "subjectIndices": ["言(言詞)", "行(行為)"],
+      "verbIndices": ["信(守信)", "果(果斷)"],
+      "particleIndices": ["必(一定)", "必(一定)"]
+    }
+  },
+  
+    {
+      "id": "q003",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "孤方相容天下",
+      "answer": {
+        "subjectIndices": ["孤(我)"],
+        "verbIndices": ["相容(廣納)"],
+        "particleIndices": ["方(正)"]
+      },
+      "translation": "我現在正廣納天下人才。"
+    },
+    {
+      "id": "q004",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "孺子何不灑掃以待賓客",
+      "answer": {
+        "subjectIndices": ["孺子(年輕人)"],
+        "verbIndices": ["灑掃(打掃)", "待(迎接)"],
+        "particleIndices": ["以(用來)"]
+      },
+      "translation": "小伙子你為什麼不打掃房間來迎接客人？"
+    },
+    {
+      "id": "q005",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "大丈夫處世，當掃除天下",
+      "answer": {
+        "subjectIndices": ["大丈夫"],
+        "verbIndices": ["處(身處)", "掃除(清除)"],
+        "particleIndices": ["當(應當)"]
+      },
+      "translation": "大丈夫為人處世，應當以掃除天下的壞事為己任。"
+    },
+    {
+      "id": "q006",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "為人有大志，不修細節",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["修(講究)"],
+        "particleIndices": []
+      },
+      "translation": "有遠大的志向，不計較生活上的小節"
+    },
+    {
+      "id": "q007",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "小子安知壯士志哉",
+      "answer": {
+        "subjectIndices": ["小子(平庸的人)"],
+        "verbIndices": ["知(知道)"],
+        "particleIndices": []
+      },
+      "translation": "平庸的人怎麼能了解壯士的志向呢！"
+    
+    },
+    {
+      "id": "q008",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "願乘長風破萬里浪",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["願(希望)","乘(駕著)", "破(劈開)"],
+        "particleIndices": []
+      },
+      "translation": "希望乘著強風在大浪裡馳騁。"
+    },
+    {
+      "id": "q009",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "中夜聞雞鳴，因起舞",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["聞(聽到)", "鳴(叫)", "起舞(起床舞劍)"],
+        "particleIndices": ["因(於是)"]
+      },
+      "translation": "半夜聽到雞叫聲，於是起床舞劍。"
+    },
+    {
+      "id": "q010",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "睿素無北伐之志",
+      "answer": {
+        "subjectIndices": ["睿"],
+        "verbIndices": ["北伐(向北邊征討)"],
+        "particleIndices": ["素(向來)"]
+      },
+      "translation": "司馬睿向來沒有北伐的志向。"
+    },
+    {
+      "id": "q011",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "脅以白刃，不從",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["脅(威脅)", "從(順從)"],
+        "particleIndices": ["以(用)"]
+      },
+      "translation": "金兵用刀子威脅他，趙廣不順從。"
+    },
+    {
+      "id": "q012",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "而廣生實用左手",
+      "answer": {
+        "subjectIndices": ["廣生"],
+        "verbIndices": ["用(使用)"],
+        "particleIndices": ["而(然而)", "實(其實)"]
+      },
+      "translation": "然而趙廣其實是用左手作畫的。"
+    },
+    {
+      "id": "q013",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "乃幽武，置大窖中",
+      "answer": {
+        "subjectIndices": ["武"],
+        "verbIndices": ["幽(囚禁)", "置(放置)"],
+        "particleIndices": ["乃(於是)"]
+      },
+      "translation": "於是就把蘇武囚禁起來，放在大地窖裡面。"
+    },
+    {
+      "id": "q014",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "掘野鼠去草實而食之",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["掘(挖取)", "食(吃)"],
+        "particleIndices": ["而(並)"]
+      },
+      "translation": "只能挖取野鼠所儲藏的野生果實來吃。"
+    },
+    {
+      "id": "q015",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "苟富貴，無相忘",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["富貴(有錢了)", "忘(忘記)"],
+        "particleIndices": ["苟(如果)",  "相(互相)"]
+      },
+      "translation": "如果將來誰富貴了，彼此都不要忘記。"
+    },
+    {
+      "id": "q016",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "燕雀安知鴻鵠之志哉",
+      "answer": {
+        "subjectIndices": ["燕雀"],
+        "verbIndices": ["知(知道)"],
+        "particleIndices": ["安(怎麼)"]
+      },
+      "translation": "燕雀怎能知道天鵝的志向呢！"
+    },
+    {
+      "id": "q017",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "項籍少時，學書不成",
+      "answer": {
+        "subjectIndices": ["項籍(項羽)"],
+        "verbIndices": ["學(學習)", "成(成功)"],
+        "particleIndices": []
+      },
+      "translation": "項籍年少時，讀書沒有成就。"
+    },
+    {
+      "id": "q018",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "老者安之，朋友信之",
+      "answer": {
+        "subjectIndices": ["老者(老人)", "朋友(朋友)"],
+        "verbIndices": ["安(安適)", "信(信任)"],
+        "particleIndices": []
+      },
+      "translation": "能讓老人過得安適，能讓朋友們信任。"
+    },
+    {
+      "id": "q019",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "願無伐善，無施勞",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["願(希望)","伐(誇耀)", "施(張揚)"],
+        "particleIndices": []
+      },
+      "translation": "希望不誇耀自己的長處，也不表白自己的功勞。"
+    },
+    {
+      "id": "q020",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "駐馬觀之，良久而去",
+      "answer": {
+        "subjectIndices": [],
+        "verbIndices": ["駐(停住)", "觀(觀看)", "去(離開)"],
+        "particleIndices": ["而(才)"]
+      },
+      "translation": "他停下馬觀看石碑，過了很久才離開。"
+    },
+    {
+      "id": "q021",
+      "type": "CIRCLE_CLASSICAL",
+      "difficulty": "R",
+      "text": "暮歸，忘其牛",
+      "answer": {
+        "subjectIndices": ["其"],
+        "verbIndices": ["歸(回家)", "忘(忘記)"],
+        "particleIndices": [] 
+      },
+      "translation": "傍晚回家時，他把放牧的牛都忘記了。"
+    }
+  
+]
